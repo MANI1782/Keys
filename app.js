@@ -138,7 +138,7 @@ app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/secrets',
     passport.authenticate('twitter', { failureRedirect: '/login', failureMessage: true }),
     function (req, res) {
-        res.redirect('/');
+        res.redirect('/secrets');
     });
 
 
