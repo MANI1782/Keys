@@ -133,16 +133,13 @@ passport.use(new TwitterStrategy({
 
 
 //TWITTER
-app.get('/auth/twitter',
-    passport.authenticate('twitter'));
+app.get('/login/twitter', passport.authenticate('twitter'));
 
-app.get('/auth/twitter/secrets',
-    passport.authenticate('twitter', { failureRedirect: '/login' }),
+app.get('/oauth/secrets/twitter',
+    passport.authenticate('twitter', { failureRedirect: '/login', failureMessage: true }),
     function (req, res) {
-        // Successful authentication, redirect home.
-        res.redirect('/secrets');
+        res.redirect('/');
     });
-
 
 
 //google
