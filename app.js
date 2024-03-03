@@ -133,9 +133,9 @@ passport.use(new TwitterStrategy({
 
 
 //TWITTER
-app.get('/login/twitter', passport.authenticate('twitter'));
+app.get('/auth/twitter', passport.authenticate('twitter'));
 
-app.get('/oauth/secrets/twitter',
+app.get('/auth/secrets/twitter',
     passport.authenticate('twitter', { failureRedirect: '/login', failureMessage: true }),
     function (req, res) {
         res.redirect('/');
