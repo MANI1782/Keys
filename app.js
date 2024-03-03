@@ -46,7 +46,7 @@ app.use(passport.session())
 
 
 
-mongoose.connect("mongodb://localhost:27017/userDB")
+mongoose.connect("mongodb+srv://manish:manish@cluster3.p3okkmq.mongodb.net/userDB")
 
 
 
@@ -103,7 +103,7 @@ passport.deserializeUser(function (user, cb) {
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/secrets"
+    callbackURL: "http://secretserver-xew4.onrender.com/auth/google/secrets"
 },
     function (accessToken, refreshToken, profile, cb) {
         User.findOrCreate({ googleId: profile.id }, function (err, user) {
@@ -120,7 +120,7 @@ passport.use(new GoogleStrategy({
 passport.use(new TwitterStrategy({
     consumerKey: process.env.TWITTER_ID,
     consumerSecret: process.env.TWITTER_SECRET,
-    callbackURL: "http://localhost:3000/auth/twitter/secrets"
+    callbackURL: "https://secretserver-xew4.onrender.com/auth/twitter/secrets"
 },
     function (token, tokenSecret, profile, cb) {
         User.findOrCreate({ twitterId: profile.id }, function (err, user) {

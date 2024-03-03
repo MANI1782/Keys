@@ -17,6 +17,7 @@
     "express-session": "^1.18.0",
     "git": "^0.1.5",
     "md5": "^2.3.0",
+    "mongodb": "^6.4.0",
     "mongoose": "^8.2.0",
     "mongoose-encryption": "^2.1.2",
     "mongoose-findorcreate": "^4.0.0",
